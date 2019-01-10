@@ -1,0 +1,51 @@
+{% load static %}
+
+<html>
+<head>
+    <title>{% block title %}webuildprisons{% endblock title %}</title>
+    {% block head_meta %}
+    {% block head_meta_charset %}
+    <meta http-equiv="Content-Type" content="text/html"; charset="utf-8" />
+    {% endblock head_meta_charset %}
+    {% block head_meta_contentlanguage %}
+    <meta http-equiv="Content-Language" value="en-US" />
+    {% endblock head_meta_contentlanguage %}
+    {% block head_meta_viewport %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% endblock head_meta_viewport %}
+    {% endblock head_meta %}
+
+    {% block head_css %}
+    {% block head_css_site %}
+    <link href="{% static 'css/bootstrap.min.css' %}" rel='stylesheet' media="screen">
+    {% endblock head_css_site %}
+    {% block head_css_section %}{% endblock head_css_section %}
+    {% block head_css_page %}{% endblock head_css_page %}
+    {% endblock head_css %}
+</head>
+<body>
+{# Navigation Menu #}
+<header>
+</header>
+{# The Document Body #}
+<div>
+    {% block content %}
+
+    {% endblock content %}
+</div>
+{# The Footer #}
+<div class='footer'>
+    <div class='container'>
+        <p>Copyright Kent Howard</p>
+    </div>
+</div>
+</body>
+{% block footer_javascript %}
+{% block footer_javascript_site %}
+<script src="{{ STATIC_URL }}js/jquery.min.js"></script>
+<script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+{% endblock footer_javascript_site %}
+{% block footer_javascript_section %}{% endblock footer_javascript_section %}
+{% block footer_javascript_page %}{% endblock footer_javascript_page %}
+{% endblock footer_javascript %}
+</html>
