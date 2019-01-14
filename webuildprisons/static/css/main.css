@@ -1,0 +1,10 @@
+.top-link {
+text-decoration: none;
+color: #00000;
+text-align: right;
+}
+
+a:hover {
+text-decoration: none;
+color: #000000;
+}
