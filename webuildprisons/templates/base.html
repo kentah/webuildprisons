@@ -18,7 +18,7 @@
     {% block head_css %}
     {% block head_css_site %}
     <link href="{% static 'css/bootstrap.min.css' %}" rel='stylesheet' media="screen">
-    <link href="{% static 'css/main.css' %}" rel="stylesheet" media="screen">
+    <link href="{% static 'css/nav.css' %}" rel="stylesheet" media="screen">
     {% endblock head_css_site %}
     {% block head_css_section %}{% endblock head_css_section %}
     {% block head_css_page %}{% endblock head_css_page %}
@@ -26,6 +26,25 @@
 </head>
 <body>
 {# Navigation Menu #}
+{% block navigation %}
+<nav>
+    <div class="top-link">
+        <nav>
+            <h5>
+                <a class='nav-item' href="{% url 'main' %}">we.build.prisons</a>
+            </h5>
+            <nav class="nav justify-content-end">
+                <h4 >
+                    <a class='nav-item' href="{% url 'sound' %}">sound(())</a>
+                    <a class='nav-item' href="{% url 'image' %}">image-</a>
+                    <a class='nav-item' href="{% url 'video' %}">video<-></a>
+                    <a class='nav-item' href="{% url 'blog' %}">words...</a>
+                </h4>
+            </nav>
+        </nav>
+    </div>
+</nav>
+{% endblock navigation %}
 <header>
 </header>
 {# The Document Body #}
@@ -43,8 +62,8 @@
 </body>
 {% block footer_javascript %}
 {% block footer_javascript_site %}
-<script src="{{ STATIC_URL }}js/jquery.min.js"></script>
-<script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
 {% endblock footer_javascript_site %}
 {% block footer_javascript_section %}{% endblock footer_javascript_section %}
 {% block footer_javascript_page %}{% endblock footer_javascript_page %}
